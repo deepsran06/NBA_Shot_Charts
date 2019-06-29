@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>NBA Shot Charts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1>NBA Shot Chart</h1>
+      <p>Seasons: 2003-2018</p>
+      <p>Alan Tsai, Deep Sran, Bill Eveloff, Jongwoo Lee</p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+            <div id="player">Select Player</div>
+            <select id="selPlayer" onchange="optionChanged(this.value)"></select>
+            <div id="season">Select Season</div>
+            <select id="selSeason" onchange="optionChanged(this.value)"></select>
+            <p></p>
+            <a class="filter list-group-item" id="shotPlot">Plot Shots!</a>
+            <a class="filter list-group-item" id="heatPlot">Heat Map!</a>
+            <a class="filter list-group-item" id="overlay">Overlay</a>
+        </div>
+        <div class="col-md-10">
+            <h2 id = 'caption'>Shot Chart</h2>
+              <div id='svg' style="text-align:center">
+              </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">NBA Shot Chart</span>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="https://www.patrick-wied.at/static/heatmapjs/assets/js/heatmap.min.js">
+  </script>
+  <script src="../static/js/app.js"></script>
+  <script src="../static/js/chart.js"></script>
+</body>
+
+</html>
